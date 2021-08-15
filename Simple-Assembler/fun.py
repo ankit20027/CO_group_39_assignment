@@ -1,3 +1,7 @@
+# Ankit Chaurasia -> 2020027
+# Ronit Mehta -> 2020539
+# Mithun -> 2020522
+
 reg = {
     "R0":"000",
     "R1":"001",
