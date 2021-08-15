@@ -120,11 +120,11 @@ def get_asm(i,cmds,var,labels,end,hlt_cnt):
         
         if cmds[i][0][0] == "rs" and len(cmds[i][0]) == 3:
             if correctReg(cmds[i][0][1]) and correctImmd(cmds[i][0][2]):
-                return(rightShift(cmds[i][0][1],1,int(cmds[i][0][2][1:])),hlt_cnt)
+                return(rightShift(cmds[i][0][1],1,int(cmds[i][0][2][1:]))[1],hlt_cnt)
         
         if cmds[i][0][0] == "ls" and len(cmds[i][0]) == 3:
             if correctReg(cmds[i][0][1]) and correctImmd(cmds[i][0][2]):
-                return(leftShift(cmds[i][0][1],1,int(cmds[i][0][2][1:])),hlt_cnt)
+                return(leftShift(cmds[i][0][1],1,int(cmds[i][0][2][1:]))[1],hlt_cnt)
         
         ## Type C
         if cmds[i][0][0] == "div" and len(cmds[i][0]) == 3:
