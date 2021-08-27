@@ -3,58 +3,57 @@
 # Mithun -> 2020522
 
 def add(reg, str1, str2, str3, flag):
-    res = reg[str1] + reg[str2]
+    res = reg[str2] + reg[str3]
     if(res>65535):        # 16 bit
         abc = reg[flag] 
         abc = abc[13:]
         reg[flag] = "000000000000"+"1"+abc
-        reg[str3] = 65535
+        reg[str1] = int(res % 65535)
         return
-    reg[str3] = res
+    reg[str1] = res
 
 def sub(reg, str1, str2, str3, flag):
-    subt =  reg[str1] - reg[str2]
+    subt =  reg[str2] - reg[str3]
     if(subt<0):
-        print("nope\n")
         abc = reg[flag] 
         abc = abc[13:]
         reg[flag] = "000000000000"+"1"+abc
-        reg[str3] = 0
+        reg[str1] = 0
         return
-    reg[str3] = subt
+    reg[str1] = subt
 
 def mul(reg, str1, str2, str3, flag):
-    r1 = reg[str1]
-    r2 =  reg[str2]
+    r1 = reg[str2]
+    r2 =  reg[str3]
     res = r1*r2
     if(res>65535):
         abc = reg[flag] 
         abc = abc[13:]
         reg[flag] = "000000000000"+"1"+abc
-        reg[str3] = 65535
+        reg[str1] = int(res % 65536)
         return
-    reg[str3] = res
+    reg[str1] = res
 
 
 def xor(reg,str1, str2, str3):
-    r1 = reg[str1]
-    r2 =  reg[str2]
+    r1 = reg[str2]
+    r2 =  reg[str3]
     res = r1^r2
-    reg[str3] = res
+    reg[str1] = res
 
 
 def Or(reg, str1, str2, str3):
-    r1 = reg[str1]
-    r2 =  reg[str2]
+    r1 = reg[str2]
+    r2 =  reg[str3]
     res = r1 | r2
-    reg[str3] = res
+    reg[str1] = res
 
 
 def And(reg, str1, str2, str3):
-    r1 = reg[str1]
-    r2 =  reg[str2]
+    r1 = reg[str2]
+    r2 =  reg[str3]
     res = r1 & r2
-    reg[str3] = res
+    reg[str1] = res
 
 
 def Invert(reg, str1, str2):

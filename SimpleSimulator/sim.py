@@ -72,50 +72,50 @@ while(not isHalted):
 
     ## Type A   -> 2 unused
     if (cmds[pc][:5] == "00000"):
-        add(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:],"111")
         resetFlag(reg)
+        add(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:],"111")
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "00001"):
-        sub(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:],"111")
         resetFlag(reg)
+        sub(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:],"111")
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "00110"):
-        mul(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:],"111")
         resetFlag(reg)
+        mul(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:],"111")
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "01010"):
-        xor(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:])
         resetFlag(reg)
+        xor(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:])
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "01011"):
-        Or(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:])
         resetFlag(reg)
+        Or(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:])
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "01100"):
-        And(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:])
         resetFlag(reg)
+        And(reg,cmds[pc][7:10],cmds[pc][10:13],cmds[pc][13:])
         prntReg(dump,reg,pc)
         pc += 1
 
     ## Type B
     elif (cmds[pc][:5] == "01001"):
-        leftShift(reg,cmds[pc][5:8],cmds[pc][8:])
         resetFlag(reg)
+        leftShift(reg,cmds[pc][5:8],cmds[pc][8:])
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "01000"):
-        rightShift(reg,cmds[pc][5:8],cmds[pc][8:])
         resetFlag(reg)
+        rightShift(reg,cmds[pc][5:8],cmds[pc][8:])
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "00010"):
-        movImm(reg,cmds[pc][5:8],cmds[pc][8:])
         resetFlag(reg)
+        movImm(reg,cmds[pc][5:8],cmds[pc][8:])
         prntReg(dump,reg,pc)
         pc += 1
 
@@ -126,13 +126,13 @@ while(not isHalted):
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "00111"):
-        divide(reg,cmds[pc][10:13],cmds[pc][13:])
         resetFlag(reg)
+        divide(reg,cmds[pc][10:13],cmds[pc][13:])
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "01101"):
-        Invert(reg,cmds[pc][10:13],cmds[pc][13:])
         resetFlag(reg)
+        Invert(reg,cmds[pc][10:13],cmds[pc][13:])
         prntReg(dump,reg,pc)
         pc += 1
     elif (cmds[pc][:5] == "01110"):
