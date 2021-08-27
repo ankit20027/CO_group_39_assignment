@@ -21,7 +21,6 @@ def sub(reg, str1, str2, str3, flag):
         reg[flag] = "000000000000"+"1"+abc
         reg[str3] = 0
         return
-
     reg[str3] = subt
 
 def mul(reg, str1, str2, str3, flag):
@@ -103,16 +102,38 @@ def movImm(reg, str1, n):
     res = binaryToDecimal(int(n))
     reg[str1] = res
 
+
 def leftShift(reg, str1, ImmediateString):
-    shift = ImmediateString[1:] + "0"
-    shifted = binaryToDecimal(int(shift))
-    reg[str1] = shifted
+    numberToBeShifted = reg[str1]
+    sr1 = str(bin(numberToBeShifted)).replace("0b","")
+    shiftBy = binaryToDecimal(int(ImmediateString))
+    n1 = len(sr1)
+    res = ""
+    for i in range(0,16):
+        if(i<shiftBy):
+            res = res + "0"
+        elif(i<n1+shiftBy):
+            res = sr1[i-shiftBy] + res
+        else:
+            res = "0" + res
+    val = binaryToDecimal(int(res))
+    reg[str1] = val
 
 
 def rightShift(reg, str1, ImmediateString):
-    shift = "0" + ImmediateString[0:len(ImmediateString)-1]
-    res = binaryToDecimal(int(shift))
-    reg[str1] = res
+    numberToBeShifted = reg[str1]
+    sr1 = str(bin(numberToBeShifted)).replace("0b","")
+    shiftBy = binaryToDecimal(int(ImmediateString))
+    n = len(sr1) - shiftBy
+    res = ""
+    if(n>0):
+        res = sr1[0:n]
+    else:
+        res="0"
+    
+    n = binaryToDecimal(int(res))
+    reg[str1] = n
+
 
 
 def cmp(reg, str1, str2):
