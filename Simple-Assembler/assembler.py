@@ -1,7 +1,3 @@
-# Ankit Chaurasia -> 2020027
-# Ronit Mehta -> 2020539
-# Mithun -> 2020522
-
 from fun import *
 
 def is_alpha(st):
@@ -24,7 +20,7 @@ def get_inp():
         try :
             line = input()
             if line == '':
-                pass
+                break
             elif line[:2] == '//':
                 varRead = True
                 pass

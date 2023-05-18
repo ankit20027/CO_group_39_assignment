@@ -1,7 +1,3 @@
-# Ronit Methta -> 2020539
-# Ankit Chaurasia -> 2020027
-# Mithun -> 2020522
-
 def add(reg, str1, str2, str3, flag):
     res = reg[str2] + reg[str3]
     if(res>65535):        # 16 bit

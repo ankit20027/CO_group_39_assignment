@@ -1,7 +1,4 @@
-# Ronit Methta -> 2020539
-# Ankit Chaurasia -> 2020027
-# Mithun -> 2020522
-
+import matplotlib.pyplot as plt
 from fun import *
 
 reg = {
@@ -204,11 +201,6 @@ for i in range(0,256):
     else:
         print("0000000000000000")
 
-
-#############################################################
-################### BONUS ###################################
-#############################################################
-import matplotlib.pyplot as plt
 
 plt.scatter(range(0,counter),dump,c = "blue")
 plt.title("mem_addr vs cycle")
