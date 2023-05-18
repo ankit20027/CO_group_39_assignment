@@ -8,3 +8,7 @@ Starter repository for Computer Organization, Monsoon 2021 semester, assignment 
 
 ## Some tests
 * Go to the `Testing` directory to find some test cases for both assembler and simulator.
+
+## Checking memory access
+* Plot with the cycle number (x-axis) and the memory address (y-axis). To check which memory address is accessed at what cycle.
+* Conclusion from plot: Memory addresses near to fetched address are more likely to be fetched.
