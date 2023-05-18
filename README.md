@@ -21,12 +21,14 @@ The semantics of the flags register are:
 * Greater than (G): This flag is set by the “cmp reg1 reg2” instruction if the value of reg1 > reg2
 * Equal (E): This flag is set by the “cmp reg1 reg2” instruction if reg1 = reg2
 
-add image
+![alt text]()
 
 ## ISA
 
-add image
+![alt text](images/ISA1.png)
+![alt text](images/ISA2.png)
+![alt text](images/ISA3.png)
 
 ## Encoding structure
 
-add image
+![alt text]()
